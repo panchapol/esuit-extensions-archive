@@ -1,0 +1,13 @@
+{
+  "name": "facebook-sponsored-hider",
+  "version": "0.2.0",
+  "private": true,
+  "description": "Local Chrome extension that hides Facebook sponsored feed posts",
+  "scripts": {
+    "test": "node --test tests/browser.test.cjs",
+    "package": "python3 scripts/package.py"
+  },
+  "devDependencies": {
+    "playwright": "1.58.2"
+  }
+}

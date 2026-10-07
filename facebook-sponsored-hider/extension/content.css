@@ -1,0 +1,26 @@
+[data-fb-sponsored-hider="hidden"],
+[data-fb-sponsored-hider-slot="collapsed"] {
+  display: none !important;
+  min-height: 0 !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Internal sponsorship is annotated during React rendering, before DOM labels. */
+html:not([data-fb-sponsored-hider-gate="off"]) [data-fb-sponsored-hider-data="ad"] {
+  display: none !important;
+}
+
+/* Keep the layout stable while an incomplete post's header metadata loads. */
+[data-fb-sponsored-hider="pending"],
+[data-fb-sponsored-hider="pending"] * {
+  visibility: hidden !important;
+}
+
+/* Gate newly inserted containers in CSS, even before the content script classifies
+   them. A script temporarily grants layout access only during synchronous checks. */
+html:not([data-fb-sponsored-hider-gate="off"]) :is([role="main"], [role="feed"]) :is([data-fb-sponsored-hider-data], [data-virtualized], [data-pagelet^="FeedUnit_"], [role="article"]):not([data-fb-sponsored-hider]),
+html:not([data-fb-sponsored-hider-gate="off"]) :is([role="main"], [role="feed"]) :is([data-fb-sponsored-hider-data], [data-virtualized], [data-pagelet^="FeedUnit_"], [role="article"]):not([data-fb-sponsored-hider]) * {
+  visibility: hidden !important;
+}

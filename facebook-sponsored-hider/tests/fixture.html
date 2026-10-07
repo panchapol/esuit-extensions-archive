@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><title>Sponsored Hider test feed</title>
+<style>
+body { font: 16px Arial, sans-serif; display: flex; gap: 24px; margin: 24px; background: #f0f2f5; }
+main { width: 540px; } article, [data-virtualized], .card { padding: 16px; margin-bottom: 16px; background: white; border-radius: 8px; }
+h4 { margin: 0 0 8px; } p { margin: 16px 0; } a { display: inline-block; }
+.letters { display: inline-flex; } .letters span { display: inline-block; }
+.invisible { display: none; }
+aside { width: 240px; } h3 { margin: 0 0 16px; }
+</style></head>
+<body>
+<main role="main"><div role="feed" id="feed">
+  <article role="article" id="english"><h4>Example advertiser</h4><a href="#">Sponsored</a><p data-ad-preview="message">An advertised product.</p></article>
+  <article role="article" id="thai"><h4>ตัวอย่าง</h4><a href="#">ได้รับการสนับสนุน</a><p data-ad-preview="message">ข้อความโฆษณา</p></article>
+  <article role="article" id="split"><h4>Split label advertiser</h4><a href="#"><span>Spon</span><span class="invisible">wrong</span><span>sored</span></a><p data-ad-preview="message">A split label.</p></article>
+  <article role="article" id="reordered"><h4>Reordered label advertiser</h4><a class="letters" href="#"><span style="order:8">d</span><span style="order:0">S</span><span style="order:4">s</span><span style="order:1">p</span><span style="order:7">e</span><span style="order:3">n</span><span style="order:6">r</span><span style="order:2">o</span><span style="order:5">o</span></a><p data-ad-preview="message">CSS character order.</p></article>
+  <div data-virtualized="false" id="reference"><h4>Current-layout advertiser</h4><a href="#"><span aria-labelledby="reference-label"><span style="display:inline-block;width:20px;height:16px"></span></span></a><p data-ad-comet-preview="message">Accessible referenced marker.</p></div>
+  <article role="article" id="accessible"><h4>Accessible advertiser</h4><span aria-label="ผู้สนับสนุน">···</span><p data-ad-preview="message">Accessible label.</p></article>
+  <div data-pagelet="FeedUnit_test" id="wrapper"><article role="article"><h4>Wrapped advertiser</h4><a href="#">Ad</a><p data-ad-preview="message">Wrapped post.</p></article></div>
+  <article role="article" id="ordinary"><h4>My friend</h4><a href="#">2 hours ago</a><p data-ad-preview="message">This ordinary post mentions Sponsored and Ad.</p></article>
+  <article role="article" id="body-link"><h4>Another friend</h4><a href="#">1 hour ago</a><p data-ad-preview="message"><a href="#">Sponsored</a></p></article>
+  <article role="article" id="author"><h4><a href="#">Sponsored</a></h4><a href="#">Yesterday</a><p data-ad-preview="message">An author whose name is Sponsored.</p></article>
+  <article role="article" id="comment"><h4>Discussion</h4><a href="#">Yesterday</a><p data-ad-preview="message">An ordinary discussion.</p><div data-testid="comment"><a href="#">Sponsored</a></div></article>
+  <article role="article" id="shared"><h4>Shared by a friend</h4><a href="#">Yesterday</a><article role="article"><h4>Shared source</h4><a href="#">Sponsored</a></article></article>
+  <article role="article" id="invisible"><h4>Hidden marker</h4><a class="invisible" href="#">Sponsored</a><a href="#">Yesterday</a><p data-ad-preview="message">Hidden labels are not evidence.</p></article>
+  <article role="article" id="partial"><h4>Discussion of ads</h4><a href="#">Yesterday</a><a href="#">Sponsored content explained</a><p data-ad-preview="message">Long phrases must not match.</p></article>
+  <article role="article" id="lower-link"><h4>Non-header link</h4><a href="#">Yesterday</a><div style="height:220px"></div><a href="#">Sponsored</a></article>
+  <div data-virtualized="false" id="reels-unit"><h3>Reels</h3><div role="table">A reel carousel</div></div>
+</div></main>
+<aside role="complementary">
+  <div id="sidebar" class="card"><div><h3>Sponsored​</h3></div><a href="https://l.facebook.com/l.php?u=https%3A%2F%2Fexample.com">Example sponsored card</a><button aria-label="Open menu for Example sponsored content">…</button></div>
+  <div id="birthdays" class="card"><h3>Birthdays</h3><p>A friend's birthday.</p></div>
+  <div id="contacts" class="card"><h3>Contacts</h3><p>A friend is online.</p></div>
+</aside>
+<div style="display:none"><span id="reference-label">Ad</span></div>
+</body></html>

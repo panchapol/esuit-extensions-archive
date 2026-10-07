@@ -1,0 +1,4 @@
+- [x] Implement local classifier and independent persisted switches.
+- [x] Add grouped popup/settings controls and separate content counts.
+- [x] Verify ad regressions and content filters in installed Chromium.
+- [x] Update documentation and package v0.2.0.

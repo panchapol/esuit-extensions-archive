@@ -29,7 +29,7 @@ This is an archival repository. It is not an official continuation of ESUIT and 
 
 ## Important source-code distinction
 
-The files in this repository are unpacked production extension distributions.
+The archived ESUIT files in this repository are unpacked production extension distributions.
 
 They contain the HTML, CSS, JavaScript, manifests, translations, icons, and other resources distributed to users. Much of the JavaScript has been compiled, bundled, minified, or otherwise transformed from the original development source.
 
@@ -45,6 +45,10 @@ This repository therefore does **not** necessarily contain the original:
 * Unminified dependency source
 
 The archived files may be useful for reconstruction and reverse engineering, but they should not be confused with the original maintainable source repository.
+
+## Independent new development
+
+[`facebook-sponsored-hider/`](facebook-sponsored-hider/) contains a newly developed Chrome extension for hiding Facebook sponsored feed posts and sidebar ads, with optional topic, format, and source switches. It is separate from the preserved ESUIT distributions and has its own source, tests, and installation guide.
 
 ## Responsible use
 

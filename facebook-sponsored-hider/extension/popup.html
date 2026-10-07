@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Facebook Sponsored Hider</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <main>
+    <div class="eyebrow">A quieter feed</div>
+    <h1>Sponsored Hider</h1>
+    <p class="intro">Choose what to hide from your Facebook feed.</p>
+    <label class="setting" for="enabled">
+      <span>Hide Facebook ads</span>
+      <input id="enabled" type="checkbox" role="switch" disabled>
+    </label>
+    <label class="setting" for="prevent-flashes">
+      <span>Reduce ad flashes</span>
+      <input id="prevent-flashes" type="checkbox" role="switch" disabled>
+    </label>
+    <p class="intro">Checks post data before display. Unknown layouts wait briefly, then appear automatically.</p>
+    <section aria-labelledby="filters-title">
+      <h2 id="filters-title">Content filters</h2>
+      <p class="intro">Turn on a switch to hide matching posts. Topics match English and Thai text; image-only topics may be missed.</p>
+      <div id="filters"></div>
+    </section>
+    <div class="stat"><strong id="count">—</strong><span>ad blocks hidden in this tab</span></div>
+    <p class="intro"><strong id="content-count">—</strong> content posts hidden in this tab</p>
+    <p id="status" role="status" aria-live="polite">Connecting…</p>
+    <button id="rescan" type="button" disabled>Scan this page again</button>
+    <p class="note">English &amp; Thai labels · Runs locally · <span id="version"></span></p>
+  </main>
+  <script src="filters.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

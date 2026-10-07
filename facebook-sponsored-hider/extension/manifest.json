@@ -1,0 +1,46 @@
+{
+  "manifest_version": 3,
+  "name": "Facebook Sponsored Hider",
+  "version": "0.2.0",
+  "minimum_chrome_version": "111",
+  "description": "Hide Facebook ads and choose optional topic, format, and source filters. Runs locally with English and Thai support.",
+  "permissions": [
+    "storage"
+  ],
+  "action": {
+    "default_title": "Facebook Sponsored Hider",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.facebook.com/*",
+        "https://web.facebook.com/*"
+      ],
+      "js": [
+        "page-data.js"
+      ],
+      "world": "MAIN",
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "https://www.facebook.com/*",
+        "https://web.facebook.com/*"
+      ],
+      "js": [
+        "detector.js",
+        "filters.js",
+        "content.js"
+      ],
+      "css": [
+        "content.css"
+      ],
+      "run_at": "document_start"
+    }
+  ],
+  "options_ui": {
+    "page": "popup.html",
+    "open_in_tab": true
+  }
+}
